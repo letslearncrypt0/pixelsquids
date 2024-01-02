@@ -14,7 +14,9 @@ h3 {
   text-align: center;
   text-shadow: 2px 2px #333, 0 0 10px #00e6f6;
 }
-
+p {
+  line-height: 1.5; /* Adjust the value as needed */
+}
 .blink {
   animation: blink 1s steps(5, start) infinite;
 }
@@ -46,6 +48,7 @@ h3 {
   box-shadow: 5px 5px #333;
   position: relative;
   overflow: hidden;
+  line-height: 1.5; /* Adjust the value as needed */
 }
 
 .content::before {
@@ -58,6 +61,31 @@ h3 {
   background: rgba(255, 255, 255, 0.1);
   animation: glitch 0.5s infinite;
 }
+
+.layout-container {
+  display: flex;
+  margin-top:25px;
+  margin-right: 100px;
+}
+
+.left-container {
+  flex: 1;
+
+}
+
+.right-container {
+  flex: 1;
+
+}
+
+.left-container iframe {
+  width: 420px;
+  height: 700px;
+  border: none;
+  outline: none;
+  margin-left:100px;
+}
+
 
 @keyframes glitch {
   0%,
@@ -233,6 +261,32 @@ marquee {
   border: 3px solid #FFD700;
   border-radius: 10px;
   box-shadow: 5px 5px #333;
+}
+
+.before-image,
+.after-image {
+  max-width: 75px; /* Adjust the max-width as needed */
+  height: auto;
+  margin: 0 10px; /* Adjust the margin as needed */
+  animation: rotateClockwise 2s linear infinite; /* Rotate animation */
+}
+
+.cosmos-button {
+  position: relative;
+}
+
+.button-image {
+  max-height: 28px; /* Adjust the height to match the button's height */
+  margin: 0 5px; /* Adjust the spacing around the image */
+}
+
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes pulse {
