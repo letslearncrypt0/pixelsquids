@@ -44,7 +44,6 @@ h3 {
 
 .mint-heading {
   text-transform: uppercase;
-
   display: inline-block;
   padding: 10px 20px;
   text-decoration: none;
@@ -186,7 +185,7 @@ h3 {
   max-width: 500px;
   max-height: 200px;
   margin: 0 10px;
-  padding-right: 25px;
+  padding-right: 10px;
 }
 
 .title-box {
@@ -223,7 +222,7 @@ h3 {
 }
 
 /* Responsive styles for mobile devices */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   .title-image {
     max-width: 150px; /* Smaller size for mobile */
     max-height: 60px;
@@ -237,6 +236,27 @@ h3 {
   .title-text {
     font-size: 18px; /* Smaller font size for mobile */
   }
+
+  .hero img {
+    width: 80%;
+  }
+
+  h1,
+  h2,
+  h3,
+  mint-heading {
+  font-size: 35px;
+  text-align: center;
+  text-shadow: 2px 2px #333, 0 0 0px #00e6f6;
+}
+
+.mint-info h2,
+.mint-info p {
+  margin: 0px 0;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
 }
 
 .button-box {
@@ -326,9 +346,11 @@ h3 {
   }
 
   .title-box {
-    width: 100%; /* Full width on smaller screens */
-    border-width: 5px; /* Optional: Adjust border size for mobile view */
-    padding: 10px; /* Optional: Adjust padding for mobile view */
+    width: 95%; /* Full width on smaller screens */
+    padding: 5px; /* Adjusted padding */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-width: 5px; /* Adjust border width if necessary */
   }
 
   .title-image {
