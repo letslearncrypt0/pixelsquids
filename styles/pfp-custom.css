@@ -1,0 +1,251 @@
+body {
+  font-size: 20px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(101, 141, 28, 1) 35%,
+    rgba(0, 230, 246, 1) 100%
+  );
+  background-attachment: fixed;
+  font-family: "Press Start 2P", cursive;
+  color: #f2f2f2;
+  text-shadow: 2px 2px #333, 0 0 10px #00e6f6;
+}
+  
+  h1{
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 2px 2px #333, 0 0 0px #00e6f6;
+  }
+  
+  h2 {
+    margin: 0px 0;
+    line-height: 1.5;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 2px 2px #333, 0 0 0px #00e6f6;
+    padding-bottom: 10px;
+  }
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0; /* Adjust the margin as needed */
+}
+
+.hero img {
+  width: 400px;
+  image-rendering: auto;
+  box-shadow: 7px 7px #333;
+  margin: 15px 10px; /* Adjust the margin as needed */
+}
+
+.layer-selector-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create a 4x1 grid layout */
+  gap: 0px; /* Add space between selectors */
+  justify-items: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  margin: 15px auto; /* Set top and bottom margin to 15px and auto for horizontal margin to center */
+  width: 80%; /* Set the width to 80% of the screen */
+}
+
+
+.layer-selector {
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+.layer-selector label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.layer-selector select {
+    font-size: 20px;
+    border: 3px solid transparent;
+    box-shadow: 3px 3px #ffd700;
+    padding: 20px;
+    text-decoration: none;
+    color: #f2f2f2;
+    background-color: transparent;
+    font-family: "Press Start 2P", cursive;
+    width: 300px;
+    margin-bottom:10px;
+}
+
+.layer-selector select:hover {
+    background-color: white;
+    color: #333;
+    border-color: #ffd700;
+}
+
+   
+  .button {
+    display: inline-block;
+    margin: 10px;
+    text-transform: uppercase;
+    border: 1.75px solid #ffd700;
+    box-shadow: 3px 3px #ffd700;
+    padding: 20px 40px;
+    text-decoration: none;
+    color: #f2f2f2;
+    font-size: 20px;
+    position: relative;
+    white-space: nowrap; /* Prevents wrapping */
+   
+  }
+  
+  .button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border: 3px solid #ffd700;
+    box-shadow: 5px 5px #ffd700;
+    transition: opacity 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  }
+  
+  .button:hover:after {
+    background-color: white;
+    opacity: 0;
+  }
+  
+  .buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .button-image {
+    max-height: 28px; /* Adjust the height to match the button's height */
+    margin: 0 5px; /* Adjust the spacing around the image */
+  }
+
+    /* Set the dimensions for the nftImage div */
+    #nftImage {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      image-rendering: pixelated;
+      background-color: #000;
+    }
+
+    .marquee-container {
+      text-align: center;
+      margin-top: 30px; /* Increase the margin as needed */
+      padding-bottom: 10px;
+      overflow: hidden;
+    }
+    
+    .marquee {
+      font-family: "Press Start 2P", cursive;
+      color: #ffd700;
+      font-size: 24px;
+      white-space: nowrap;
+      animation: marquee-scroll 15s linear infinite;
+    }
+    
+    .marquee img {
+      max-height: 30px; /* Adjust the height as needed */
+      margin-right: 10px; /* Adjust the margin between images and text */
+      animation: rotateClockwise 4s linear infinite; /* Adjust the animation duration as needed */
+    }
+    
+    .marquee span {
+      display: inline-block;
+      margin-right: 20px; /* Adjust the margin between text segments */
+    }
+
+    @keyframes marquee-scroll {
+      0% {
+        transform: translateX(100%);
+      }
+    
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    
+    @keyframes rotateClockwise {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  
+
+/* Responsive styles for mobile devices */
+@media screen and (max-width: 768px) {
+  body {
+      font-size: 16px; /* Adjust font size for smaller screens */
+      overflow-x: hidden;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+    }
+
+  h1 {
+      font-size: 40px; /* Adjust font size for smaller screens */
+  }
+
+  h2 {
+      font-size: 24px; /* Adjust font size for smaller screens */
+  }
+
+  .button {
+    padding: 10px 20px; /* Smaller padding */
+    font-size: 16px; /* Smaller font size */
+  }
+
+  .button-image {
+    max-height: 20px; /* Smaller images */
+    margin: 0 3px;
+  }
+
+    .button span {
+      display: none; /* Optionally hide text wrapped in <span> */
+    }
+
+  .hero img {
+    width: 80%; /* Make the image responsive to screen width */
+    height: auto; /* Maintain image aspect ratio */
+    margin: 0px 0; /* Adjust the margin as needed */
+  }
+
+  .layer-selector-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Change to a single column layout for mobile */
+    grid-template-columns: repeat(2, 1fr); /* Change to a 2x2 grid layout */
+    gap: 10px; /* Add space between selectors */
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+
+  .layer-selector label {
+    display: block;
+    margin-bottom: 10px;
+    font-size:12px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .layer-selector select {
+      width: 100%; /* Make the selects full width */
+      text-align: center;
+      font-size: 10px;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+}
+
+}
