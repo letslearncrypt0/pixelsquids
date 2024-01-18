@@ -5,6 +5,11 @@
 
     <link rel="stylesheet" type="text/css" href="styles/pfp-custom.css">
 
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -31,7 +36,7 @@
 
     <!-- Rendered NFT -->
     <div class="hero">
-        <canvas id="nftImage"></canvas> <!-- Use a canvas element for rendering -->
+        <div id="nftImage" style="background-image: url(images/background/Celadon.png);"></div>
     </div>
     
     <!-- Layer selection buttons -->
@@ -39,6 +44,7 @@
         <div class="layer-selector">
             <label for="backgroundLayer">Background:</label>
             <select id="backgroundLayer">
+                <option value="background0"></option>
                 <option value="background1">Celadon</option>
                 <option value="background2">Flax</option>
                 <option value="background3">Mauve</option>
@@ -56,6 +62,7 @@
             <div class="layer-selector">
                 <label for="bodyLayer">Body:</label>
                 <select id="bodyLayer">
+                    <option value="body0"></option>
                     <option value="body1">Squid Router</option>
                     <option value="body2">Newt</option>
                     <option value="body3">Blue</option>
@@ -69,6 +76,7 @@
             <div class="layer-selector">
                 <label for="eyesLayer">Eyes:</label>
                 <select id="eyesLayer">
+                    <option value="eyes0"></option>
                     <option value="eyes1">Milady Blue</option>
                     <option value="eyes2">Milady Green</option>
                     <option value="eyes3">Milady Pink</option>
@@ -79,6 +87,7 @@
             <div class="layer-selector">
                 <label for="mouthLayer">Mouth:</label>
                 <select id="mouthLayer">
+                    <option value="mouth0"></option>
                     <option value="mouth1">Cheery</option>
                     <option value="mouth2">Clown</option>
                     <option value="mouth3">Flirty</option>
@@ -97,21 +106,16 @@
         </a>
     </div>
 
+
+
     <div class="marquee-container">
         <div class="marquee">
-          <img src="images/pink_star.svg" alt="Pink Star">
-          <span>Not <s>Not</s> Sponsored by 🐻⛓️ BERACHAIN</span>
-          <img src="images/pink_star.svg" alt="Pink Star">
-          <span>Not <s>Not</s> Sponsored by 🐻⛓️ BERACHAIN</span>
-          <img src="images/pink_star.svg" alt="Pink Star">
-          <span>Not <s>Not</s> Sponsored by 🐻⛓️ BERACHAIN</span>
-          <img src="images/pink_star.svg" alt="Pink Star">
-          <span>Not <s>Not</s> Sponsored by 🐻⛓️ BERACHAIN</span>
-          <img src="images/pink_star.svg" alt="Pink Star">
-          <span>Not <s>Not</s> Sponsored by 🐻⛓️ BERACHAIN</span>
-          <img src="images/pink_star.svg" alt="Pink Star">
-          <span>Not <s>Not</s> Sponsored by 🐻⛓️ BERACHAIN</span>
-          <img src="images/pink_star.svg" alt="Pink Star">
+          <span>🐻⛓️ Not <s>Not</s> Sponsored by BERACHAIN</span>
+          <span>🐻⛓️  Not <s>Not</s> Sponsored by BERACHAIN</span>
+          <span>🐻⛓️  Not <s>Not</s> Sponsored by BERACHAIN</span>
+          <span>🐻⛓️  Not <s>Not</s> Sponsored by BERACHAIN</span>
+          <span>🐻⛓️  Not <s>Not</s> Sponsored by BERACHAIN</span>
+          <span>🐻⛓️  Not <s>Not</s> Sponsored by BERACHAIN</span>
         </div>
       </div>
 
