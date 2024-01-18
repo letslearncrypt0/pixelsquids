@@ -7,6 +7,7 @@ const mouthLayerSelect = document.getElementById('mouthLayer'); // Add this line
 // const nftImage = document.getElementById('nftImage');
 
 const backgrounds = {
+    background0: null,
     background1: 'images/background/Celadon.png',
     background2: 'images/background/Flax.png',
     background3: 'images/background/Mauve.png',
@@ -22,6 +23,7 @@ const backgrounds = {
 };
 
 const bodyLayers = {
+    body0: null,
     body1: 'images/body/Squid%20Router.png',
     body2: 'images/body/newt.png',
     body3: 'images/body/Blue.png',
@@ -33,6 +35,7 @@ const bodyLayers = {
 };
 
 const eyesLayers = {
+    eyes0: null,
     eyes1: 'images/eyes/Milady%20Blue.png',
     eyes2: 'images/eyes/Milady%20Green.png',
     eyes3: 'images/eyes/Milady%20Pink.png',
@@ -41,6 +44,7 @@ const eyesLayers = {
 };
 
 const mouthLayers = {
+    mouth0: null,
     mouth1: 'images/mouth/Cheery.png',
     mouth2: 'images/mouth/Clown.png',
     mouth3: 'images/mouth/Flirty.png',
@@ -109,16 +113,17 @@ function renderNFT() {
 
 // Add an event listener for the download button
 const downloadButton = document.getElementById('downloadButton');
-downloadButton.addEventListener('click', () => {
-    // Convert the canvas content to a data URL
-    const canvas = document.getElementById('nftImage'); // Change this to the ID of your canvas element
-    const dataUrl = canvas.toDataURL('image/png');
+downloadButton.addEventListener('click', downloadPng);
 
-    // Create an anchor element for the downloadable link
-    const downloadLink = document.createElement('a');
-    downloadLink.href = dataUrl;
-    downloadLink.download = 'generated-nft.png'; // Specify the filename
-
-    // Simulate a click on the anchor element to trigger the download
-    downloadLink.click();
-});
+function downloadPng() {
+    console.log('Download button clicked');
+    var element = document.getElementById("nftImage");
+    html2canvas(element, {
+        allowTaint: true,
+        useCORS: true
+    }).then(function (canvas) {
+        canvas.toBlob(function (blob) {
+            saveAs(blob, "squid.png");
+        });
+    });
+}
