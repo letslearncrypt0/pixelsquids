@@ -63,22 +63,44 @@ let selectedLayers = {
     mouth: null, // Add this line
 };
 
+
+let selectedLayerNames = {
+    background: null,
+    body: null,
+    eyes: null,
+    mouth: null,
+};
+
+
 backgroundLayerSelect.addEventListener('change', () => {
+    // Split the string by a space character
+    const parts =  backgrounds[backgroundLayerSelect.value].split('/');
+    const traitName = parts[parts.length - 1];
+    selectedLayerNames.background = traitName.replace(/\.png$/, '')
     selectedLayers.background = backgrounds[backgroundLayerSelect.value];
     renderNFT();
 });
 
 bodyLayerSelect.addEventListener('change', () => {
+    const parts =  bodyLayers[bodyLayerSelect.value].split('/');
+    const traitName = parts[parts.length - 1];
+    selectedLayerNames.body = traitName.replace(/\.png$/, '')
     selectedLayers.body = bodyLayers[bodyLayerSelect.value];
     renderNFT();
 });
 
 eyesLayerSelect.addEventListener('change', () => {
+    const parts = eyesLayers[eyesLayerSelect.value].split('/');
+    const traitName = parts[parts.length - 1];
+    selectedLayerNames.eyes = traitName.replace(/\.png$/, '')
     selectedLayers.eyes = eyesLayers[eyesLayerSelect.value];
     renderNFT();
 });
 
 mouthLayerSelect.addEventListener('change', () => { // Add this event listener
+    const parts = mouthLayers[mouthLayerSelect.value].split('/');
+    const traitName = parts[parts.length - 1];
+    selectedLayerNames.mouth = traitName.replace(/\.png$/, '')
     selectedLayers.mouth = mouthLayers[mouthLayerSelect.value];
     renderNFT();
 });
@@ -108,12 +130,30 @@ function renderNFT() {
     nftImage.style.width = `${imageWidth}px`;
     nftImage.style.height = `${imageHeight}px`;
     nftImage.style.margin = 'auto';
+    generateTweet();
 }
 
 
 // Add an event listener for the download button
 const downloadButton = document.getElementById('downloadButton');
-downloadButton.addEventListener('click', downloadPng);
+// downloadButton.addEventListener('click', generateTweet);
+
+function generateTweet() {
+
+    const baseUrl = new URL("https://pixelsquids-generator.fly.dev/share");
+
+    for (const [key, value] of Object.entries(selectedLayerNames)) {
+        if (value !== null) {
+            baseUrl.searchParams.set(key, value);
+        }
+    }
+
+    const imageUrl = baseUrl.toString();
+    
+    const tweetText = `Check out my PixelSquid ${imageUrl}`;
+ 
+    downloadButton.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+}
 
 function downloadPng() {
     console.log('Download button clicked');
