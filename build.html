@@ -1,124 +1,152 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" type="text/css" href="styles/pfp-custom.css">
+    <link rel="stylesheet" type="text/css" href="styles/pfp-custom.css" />
 
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
-
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="buttons">
-        <a class="button" href="index.html">
-            <img src="images/pixel_house.png" alt="Drip Club Icon" class="button-image"> 
-            <span>Home</span>
-          </a>
-        <a class="button" href="https://twitter.com/PixelSquids">
-          <img src="images/twitter_pixel.png" alt="Twitter Icon" class="button-image">
-          <span>Twitter</span>
-        </a>
-        <a class="button" href="https://t.me/squidcorp">
-          <img src="images/telegram_pixel.png" alt="Telegram Icon" class="button-image">
-          <span>Telegram</span>
-        </a>
-        <a class="button" href="drip.html">
-          <img src="images/drip_pixel.png" alt="Drip Club Icon" class="button-image">
-          <span>Drip Club</span>
-        </a>
-
-      </div>
-<h1>Build-A-SQUID</h1>
+      <a class="button" href="index.html">
+        <img
+          src="images/pixel_house.png"
+          alt="Drip Club Icon"
+          class="button-image"
+        />
+        <span>Home</span>
+      </a>
+      <a class="button" href="https://twitter.com/PixelSquids">
+        <img
+          src="images/twitter_pixel.png"
+          alt="Twitter Icon"
+          class="button-image"
+        />
+        <span>Twitter</span>
+      </a>
+      <a class="button" href="https://t.me/squidcorp">
+        <img
+          src="images/telegram_pixel.png"
+          alt="Telegram Icon"
+          class="button-image"
+        />
+        <span>Telegram</span>
+      </a>
+      <a class="button" href="drip.html">
+        <img
+          src="images/drip_pixel.png"
+          alt="Drip Club Icon"
+          class="button-image"
+        />
+        <span>Drip Club</span>
+      </a>
+    </div>
+    <h1>Build-A-SQUID</h1>
 
     <!-- Rendered NFT -->
     <div class="hero">
-        <div id="nftImage" style="background-image: url(images/background/Celadon.png);"></div>
+      <div
+        id="nftImage"
+        style="background-image: url(images/background/Celadon.png)"
+      ></div>
     </div>
-    
+
     <!-- Layer selection buttons -->
     <div class="layer-selector-container">
-        <div class="layer-selector">
-            <label for="backgroundLayer">Background:</label>
-            <select id="backgroundLayer">
-                <option value="background0"></option>
-                <option value="background1">Celadon</option>
-                <option value="background2">Flax</option>
-                <option value="background3">Mauve</option>
-                <option value="background4">Munsell</option>
-                <option value="background5">Orange Web</option>
-                <option value="background6">Rose Quartz</option>
-                <option value="background7">Salmon Pink</option>
-                <option value="background8">Sky Magenta</option>
-                <option value="background9">Thistle</option>
-                <option value="background10">Vivid Sky Blue</option>
-                <option value="background11">Yellow Green</option>
-            </select>
-        </div>
-        
-            <div class="layer-selector">
-                <label for="bodyLayer">Body:</label>
-                <select id="bodyLayer">
-                    <option value="body0"></option>
-                    <option value="body1">Squid Router</option>
-                    <option value="body2">Newt</option>
-                    <option value="body3">Blue</option>
-                    <option value="body4">Green</option>
-                    <option value="body5">Orange</option>
-                    <option value="body6">Pink</option>
-                    <option value="body7">Red</option>
-                </select>
-            </div>
+      <div class="layer-selector">
+        <label for="backgroundLayer">Background:</label>
+        <select id="backgroundLayer">
+          <option value="background0"></option>
+          <option value="background1">Celadon</option>
+          <option value="background2">Flax</option>
+          <option value="background3">Mauve</option>
+          <option value="background4">Munsell</option>
+          <option value="background5">Orange Web</option>
+          <option value="background6">Rose Quartz</option>
+          <option value="background7">Salmon Pink</option>
+          <option value="background8">Sky Magenta</option>
+          <option value="background9">Thistle</option>
+          <option value="background10">Vivid Sky Blue</option>
+          <option value="background11">Yellow Green</option>
+        </select>
+      </div>
 
-            <div class="layer-selector">
-                <label for="eyesLayer">Eyes:</label>
-                <select id="eyesLayer">
-                    <option value="eyes0"></option>
-                    <option value="eyes1">Milady Blue</option>
-                    <option value="eyes2">Milady Green</option>
-                    <option value="eyes3">Milady Pink</option>
-                    <option value="eyes4">Pit Viper Knockoff</option>
-                </select>
-            </div>
+      <div class="layer-selector">
+        <label for="bodyLayer">Body:</label>
+        <select id="bodyLayer">
+          <option value="body0"></option>
+          <option value="body1">Squid Router</option>
+          <option value="body2">Newt</option>
+          <option value="body3">Blue</option>
+          <option value="body4">Green</option>
+          <option value="body5">Orange</option>
+          <option value="body6">Pink</option>
+          <option value="body7">Red</option>
+        </select>
+      </div>
 
-            <div class="layer-selector">
-                <label for="mouthLayer">Mouth:</label>
-                <select id="mouthLayer">
-                    <option value="mouth0"></option>
-                    <option value="mouth1">Cheery</option>
-                    <option value="mouth2">Clown</option>
-                    <option value="mouth3">Flirty</option>
-                    <option value="mouth4">Grill</option>
-                    <option value="mouth5">Sad</option>
-                    <option value="mouth6">Smile</option>
-                    <option value="mouth7">Tongue</option>
-                    <option value="mouth8">Unimpressed</option>
-                </select>
-            </div>
+      <div class="layer-selector">
+        <label for="eyesLayer">Eyes:</label>
+        <select id="eyesLayer">
+          <option value="eyes0"></option>
+          <option value="eyes1">Milady Blue</option>
+          <option value="eyes2">Milady Green</option>
+          <option value="eyes3">Milady Pink</option>
+          <option value="eyes4">Pit Viper Knockoff</option>
+        </select>
+      </div>
+
+      <div class="layer-selector">
+        <label for="mouthLayer">Mouth:</label>
+        <select id="mouthLayer">
+          <option value="mouth0"></option>
+          <option value="mouth1">Cheery</option>
+          <option value="mouth2">Clown</option>
+          <option value="mouth3">Flirty</option>
+          <option value="mouth4">Grill</option>
+          <option value="mouth5">Sad</option>
+          <option value="mouth6">Smile</option>
+          <option value="mouth7">Tongue</option>
+          <option value="mouth8">Unimpressed</option>
+        </select>
+      </div>
     </div>
 
     <div class="buttons">
-        <a class="button" button id="downloadButton">
-        <img src="images/twitter_pixel.png" alt="Twitter Icon" class="button-image">Tweet It!</button>
-        </a>
+      <a
+        class="button"
+        button
+        id="downloadButton"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="images/twitter_pixel.png"
+          alt="Twitter Icon"
+          class="button-image"
+        />Tweet It!
+      </a>
     </div>
 
-
-
     <div class="marquee-container">
-        <div class="marquee">
-          <span>🐻⛓️ Not <s>Not</s> Sponsored by BERACHAIN</span>
-          <span>🐻⛓️  Not <s>Not</s> Sponsored by BERACHAIN</span>
-          <span>🐻⛓️  Not <s>Not</s> Sponsored by BERACHAIN</span>
-          <span>🐻⛓️  Not <s>Not</s> Sponsored by BERACHAIN</span>
-          <span>🐻⛓️  Not <s>Not</s> Sponsored by BERACHAIN</span>
-          <span>🐻⛓️  Not <s>Not</s> Sponsored by BERACHAIN</span>
-        </div>
+      <div class="marquee">
+        <span>🐻⛓️ Not <s>Not</s> Sponsored by BERACHAIN</span>
+        <span>🐻⛓️ Not <s>Not</s> Sponsored by BERACHAIN</span>
+        <span>🐻⛓️ Not <s>Not</s> Sponsored by BERACHAIN</span>
+        <span>🐻⛓️ Not <s>Not</s> Sponsored by BERACHAIN</span>
+        <span>🐻⛓️ Not <s>Not</s> Sponsored by BERACHAIN</span>
+        <span>🐻⛓️ Not <s>Not</s> Sponsored by BERACHAIN</span>
       </div>
+    </div>
 
     <script src="scripts/pfp.js"></script>
-</body>
+  </body>
 </html>

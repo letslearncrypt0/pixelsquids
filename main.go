@@ -55,6 +55,7 @@ func main() {
 		attributes[parts[0]] = append(options, parts[1])
 	}
 	http.HandleFunc("/share", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
 		background := strings.ReplaceAll(r.URL.Query().Get("background"), "%20", " ")
 		body := strings.ReplaceAll(strings.TrimSpace(r.URL.Query().Get("body")), "%20", " ")
 		eyes := strings.ReplaceAll(strings.TrimSpace(r.URL.Query().Get("eyes")), "%20", " ")
@@ -78,6 +79,7 @@ func main() {
 		w.Header().Set("Content-Type", "text/html")
 	})
 	http.HandleFunc("/generate", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
 		background := strings.ReplaceAll(r.URL.Query().Get("background"), "%20", " ")
 		body := strings.ReplaceAll(strings.TrimSpace(r.URL.Query().Get("body")), "%20", " ")
 		eyes := strings.ReplaceAll(strings.TrimSpace(r.URL.Query().Get("eyes")), "%20", " ")

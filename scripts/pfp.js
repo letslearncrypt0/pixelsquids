@@ -136,7 +136,7 @@ function renderNFT() {
 
 // Add an event listener for the download button
 const downloadButton = document.getElementById('downloadButton');
-// downloadButton.addEventListener('click', generateTweet);
+downloadButton.addEventListener('click', downloadPng);
 
 function generateTweet() {
 
@@ -155,15 +155,48 @@ function generateTweet() {
     downloadButton.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
 }
 
-function downloadPng() {
-    console.log('Download button clicked');
-    var element = document.getElementById("nftImage");
-    html2canvas(element, {
-        allowTaint: true,
-        useCORS: true
-    }).then(function (canvas) {
-        canvas.toBlob(function (blob) {
-            saveAs(blob, "squid.png");
-        });
-    });
+async function downloadImage(
+    imageSrc,
+    nameOfDownload = 'squid.png',
+  ) {
+    const response = await fetch(imageSrc);
+  
+    const blobImage = await response.blob();
+  
+    const href = URL.createObjectURL(blobImage);
+  
+    const anchorElement = document.createElement('a');
+    anchorElement.href = href;
+    anchorElement.download = nameOfDownload;
+  
+    document.body.appendChild(anchorElement);
+    anchorElement.click();
+  
+    document.body.removeChild(anchorElement);
+    window.URL.revokeObjectURL(href);
+  }
+  
+
+function downloadPng(e) {
+   
+    const baseUrl = new URL("https://pixelsquids-generator.fly.dev/generate");
+
+    for (const [key, value] of Object.entries(selectedLayerNames)) {
+        if (value !== null) {
+            baseUrl.searchParams.set(key, value);
+        }
+    }
+
+    const imageUrl = baseUrl.toString();   
+    downloadImage(imageUrl).then(() => console.log('Downloaded!'));
+    // console.log('Download button clicked');
+    // var element = document.getElementById("nftImage");
+    // html2canvas(element, {
+    //     allowTaint: true,
+    //     useCORS: true
+    // }).then(function (canvas) {
+    //     canvas.toBlob(function (blob) {
+    //         saveAs(blob, "squid.png");
+    //     });
+    // });
 }
