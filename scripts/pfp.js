@@ -140,7 +140,7 @@ downloadButton.addEventListener('click', downloadPng);
 
 function generateTweet() {
 
-    const baseUrl = new URL("https://pixelsquid-generator.sgdn.co/share");
+    const baseUrl = new URL("https://pixelsquids-generator.fly.dev/share");
 
     for (const [key, value] of Object.entries(selectedLayerNames)) {
         if (value !== null) {
@@ -179,7 +179,7 @@ async function downloadImage(
 
 function downloadPng(e) {
    
-    const baseUrl = new URL("https://pixelsquid-generator.sgdn.co/generate");
+    const baseUrl = new URL("https://pixelsquids-generator.fly.dev/generate");
 
     for (const [key, value] of Object.entries(selectedLayerNames)) {
         if (value !== null) {
