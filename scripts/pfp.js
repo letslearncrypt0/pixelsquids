@@ -136,7 +136,7 @@ function renderNFT() {
 
 // Add an event listener for the download button
 const downloadButton = document.getElementById('downloadButton');
-downloadButton.addEventListener('click', downloadPng);
+downloadButton.addEventListener('click', generateTweet);
 
 function generateTweet() {
 
