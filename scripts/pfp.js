@@ -150,7 +150,7 @@ function generateTweet() {
 
     const imageUrl = baseUrl.toString();
     
-    const tweetText = `Check out my PixelSquid ${imageUrl}`;
+    const tweetText = `Check out my PixelSquid minting Feb 2 on @Stargaze ${imageUrl}`;
  
     downloadButton.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
 }
